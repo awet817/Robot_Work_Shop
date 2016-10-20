@@ -106,7 +106,7 @@ void Controller::pc() {
 		rmodelp = rmodelp + a;
 		cout << "The new price is $" << rmodelp << endl;
 	}
-	cout << "How is it for shipping and handling?" << endl;
+	cout << "How much is it for shipping and handling?" << endl;
 	cin >> ship;
 	cin.ignore();
 	cout << "Please give a brief description of the robot model." << endl;
@@ -166,15 +166,13 @@ void Controller::at() {
 		getline(cin, aname);
 		cout << "What is the customers name?" << endl;
 		getline(cin, cname);
-		cout << "What is that date?" << endl;
+		cout << "What is that date(02/03/16|month,day,year format)?" << endl;
 		getline(cin, date);
 		cout << "What is the order number?" << endl;
 		cin >> aorder;
-		cout << "What is the price of the order?" << endl;
-		cin >> aaprice;
 		double tax;
-		tax = (aaprice + robot.get_ship(e))*.0825;
-		aaprice = (aaprice + robot.get_ship(e)) + tax;
+		tax = (robot.get_price(e) + robot.get_ship(e))*.0825;
+		aaprice = (robot.get_price(e) + robot.get_ship(e)) + tax;
 		cout << "The price after taxs is " << aaprice << endl;
 		ast.info(cname, date, aorder, aaprice, e, aname, c1);
 	}
@@ -193,5 +191,34 @@ void Controller::at() {
 	}
 };
 void Controller::pb() {
+	int i, ab = robot.robot_size();
+
+	cout << "                  ROBOT MODEL CATALOG" << endl;
+	cout << "--------------------------------------------------------------" << endl;
+	for (i = 0; i < ab; i++) {
+		cout << i + 1 << ".) Model Name: " << robot.get_name(i) << " |Price: $" << robot.get_price(i) << " |Shipping: " << robot.get_ship(i) << "\n" << endl;
+		cout << "Description: " << robot.get_des(i) << "\n" << endl;
+	}
+	cout << "--------------------------------------------------------------" << endl;
+	cout << "1.) Profit margin" << endl;
+	cout << "2.) List during a specific period(02/03/16|month,day,year format)" << endl;
+	cout << "3.) Profit margin" << endl;
+	cout << "4.) Raise for Sales Associate" << endl;
+	int num;
+	cout << "Select a number: " << endl;
+	cin >> num;
+	if (num == 1) {
+		//cout << "Which robot model would" << endl;
+	}
+	if (num == 2) {
+
+	}
+	if (num == 3) {
+
+	}
+	if (num == 4) {
+
+	}
+
 
 };

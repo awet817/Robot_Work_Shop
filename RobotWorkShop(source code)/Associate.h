@@ -16,6 +16,7 @@ public:
 	int get_robot(int a);
 	string get_associate(int a);
 	int cust_count();
+	int sales(string a);
 private:
 	int count;
 	vector<string>associate_name;

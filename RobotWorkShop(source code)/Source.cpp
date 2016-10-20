@@ -29,10 +29,7 @@ int main() {
 		if (a == 4) {
 			control.pb();
 		}
-
 		cout << "\n" << endl;
-
-	
 	}
 	return 0;
 }

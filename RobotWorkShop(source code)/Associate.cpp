@@ -36,3 +36,13 @@ int Associate::cust_count() {
 	int z = count;
 	return z;
 };
+int Associate::sales(string a) {
+	int i,b= cust_count(),count=0;
+	for (i = 0; i < b; i++) {
+		if (get_associate(i).compare(a)==0) {
+			count++;
+		}
+	}
+	return count;
+};
+
